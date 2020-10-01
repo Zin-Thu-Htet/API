@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<News>, response: Response<News>) {
-                txtResult.text = response.toString()
+                txtResult.text = response.body()?.articles?.get(0)?.toString()
             }
         })
     }
